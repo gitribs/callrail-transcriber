@@ -1,0 +1,24 @@
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Local run output (call transcripts, progress, downloaded audio)
+output/
+
+# Real CallRail exports (caller names and phone numbers)
+Call-List*.csv
+*.xlsx
+
+# Keep the fake sample CSV
+!sample_calls.csv
+
+# Local environment
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.DS_Store
+*.mp3
+.idea/
+.vscode/

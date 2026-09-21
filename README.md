@@ -6,7 +6,7 @@ This is a one-purpose script you run on your computer. There is no website, data
 
 ## What CallRail is
 
-CallRail is a call-tracking service. Businesses give out tracking phone numbers; CallRail logs who called, and (if recording is enabled) stores an audio file of the call. Each recording can be reached by a URL. This tool does **not** log into CallRail. You supply a spreadsheet of those URLs (and whatever caller name / phone / date / call ID Nhi can export), and it produces text.
+CallRail is a call-tracking service. Businesses give out tracking phone numbers; CallRail logs who called, and (if recording is enabled) stores an audio file of the call. Each recording can be reached by a URL. This tool does **not** log into CallRail. You supply a spreadsheet of those URLs (and any caller name / phone / date / call ID columns), and it produces text.
 
 CallRail’s normal Call Log Excel export often includes name, phone, and date, but **may not include a downloadable recording URL**. The CSV you feed this tool must have a column that is actually a recording or audio URL.
 
@@ -68,8 +68,8 @@ Save Excel exports as CSV (UTF-8) before running.
 ```bash
 source .venv/bin/activate
 python transcribe.py sample_calls.csv
-python transcribe.py /path/to/nhi_calls.csv --output-dir ./output
-python transcribe.py /path/to/nhi_calls.csv -l 3
+python transcribe.py /path/to/client_calls.csv --output-dir ./output
+python transcribe.py /path/to/client_calls.csv -l 3
 ```
 
 Flags:

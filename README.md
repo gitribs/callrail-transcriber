@@ -132,7 +132,7 @@ Progress is saved after every call. If the run is interrupted (Ctrl+C, laptop sl
 - Each call is two API requests: speech-to-text, then a cheap text-only speaker-label pass. A 3-call test should take on the order of ~20 seconds plus a few seconds of labeling, not minutes.
 - Ballpark STT cost for ~2,000 calls at ~3 minutes each with `gpt-4o-mini-transcribe` is on the order of **$20**. Speaker labeling is usually a few dollars more. That is not a quote.
 
-Do not set `OPENAI_TRANSCRIBE_MODEL` to `gpt-4o-transcribe-diarize`. It is slower and it rewrites wording. `whisper-1` is the most forgiving for long audio but still returns one block of text before the labeling step.
+The default model for transcription is `gpt-4o-mini-transcribe`, which produced the best results in testing. Do not set `OPENAI_TRANSCRIBE_MODEL` to `gpt-4o-transcribe-diarize`. It is slower and it rewrites wording. For long audio, `whisper-1` is the least likely to reject the file for length, and will still returns one block of text before the labeling step.
 
 ## How a recording is processed
 
